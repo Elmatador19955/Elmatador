@@ -1,1 +1,18 @@
-hanii bech ntasti tawa 
+ex 1: 
+1-a ) class category 
+{
+#[ORM\Id]
+#[ORM\Generared value]
+#[ORM\Column]
+private ?int $id=null;
+}
+
+/Créer le ficher de migration avec la commande php bin/console make :migrationLlancer la migration avec la commande php bin/console doctrine :migration :migrate
+
+
+1-b ) 
+
+Entity Manager (EM) est un gestionnaire d’entités• C’est le chef d’orchestre de l’ORM Doctrine• EM permet l’insertion, la mise à jour et la suppression des données de la base de données
+2 methode :
+1) La méthode persist()
+2) la methode flush()
