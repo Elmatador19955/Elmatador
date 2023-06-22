@@ -1,0 +1,35 @@
+x=np.linspace(1,2,100) # discretize [1,2] in 100 nodes.
+g=lambda x: abs((2-2*x**2)/(x**2+1)**2)
+plt.plot(x,g(x))
+plt.grid(True)
+plt.xlabel('x-axis ')
+plt.ylabel('y-axis')
+plt.title('Curve of g')
+
+
+def iterativemethod(a,b,x0,f,epsilon):
+x=[x0]
+y=[f(x0)]
+c=((b-a)/(f(b)-f(a)))
+while (abs(y[-1])>epsilon):
+x0=x0-c*f(x0)
+x.append(x0.evalf())
+y.append(f(x0).evalf())
+return x,y
+
+x=sp.symbols('x')
+f=sp.Lambda(x,sp.log(x**2+1)-sp.sin(x))
+(f(1)*f(2)).evalf()
+
+df=sp.Lambda(x,sp.diff(f(x),x))
+df
+
+#Give the appropriate instructions
+t=np.linspace(1,2,100)
+df=lambda t: (2*t/(t**2+1))-np.cos(t)
+plt.plot(t,df(t))
+
+plt.grid(True)
+plt.xlabel('x-axis ')
+plt.ylabel('y-axis')
+plt.title('Curve of df')

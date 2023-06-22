@@ -1,0 +1,35 @@
+# Code
+x=[-2,0,2]
+y=[4,3,6]
+diffdiv(x,y)
+
+def InterpolationNewton(t,x,y):
+
+P=np.zeros((len(t))) # Initialisation
+beta=diffdiv(x,y) # beta : les coefficients de Newton
+for i in np.arange(0,3):
+P+=beta[i]*BaseNewton(t,i,x)
+return P
+
+
+# Code
+# x, y et t sont déjà déclarées.
+P=InterpolationNewton(t,x,y)
+P
+
+
+# Code
+t=np.linspace(-2,2,100)
+P=InterpolationNewton(t,x,y)
+Q=lambda t:0.5*(t**2)+0.5*t+3
+plt.plot(t,P,'mo',t,Q(t),'b')
+plt.grid(True)
+plt.legend(('Polynome dínterpolation P','polynome Q'))
+
+
+def methode1(f,x):
+
+I=0
+for k in np.arange(0,len(x)-1):
+I+=(x[k+1]-x[k])*f(x[k])
+return I

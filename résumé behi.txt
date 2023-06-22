@@ -1,0 +1,32 @@
+def schema(f,x0,t0,T,N):
+
+h=T/N
+X=[x0]
+for k in np.arange(0, N):
+p=X[k]+h*f(t0+k*h,X[k])
+X.append(X[k]+0.5*h*(f(t0+k*h,X[k])+f(t0+(k+1)*h,p)))
+return X
+
+# Instructions Python
+r=0.2
+K=100
+t0=0
+T=72
+N=180
+x0=40
+f=lambda t, x: r*x*(1-x/K)
+X=schema(f,x0,t0,T,N)
+print('L'effectif de la population bactérienne à l'instant t=72 vaut
+,→',X[-1])
+
+
+
+]: #Instructions Python
+r=0.2
+K=100
+x0=40
+xex = lambda t,x0 :(x0*K)/(x0+(K-x0)*np.exp(-r*t)) #0.75
+t=72
+print("L'erreur commise est ",abs(xex(t,x0)-X[-1])) #0.75
+# Pour la déclaration de xex, comme x0 est déclarée alors on pourra
+,→écrire xex = lambda t :(x0*K)/(x0+(K-x0)*np.exp(-r*t))

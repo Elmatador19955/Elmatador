@@ -1,0 +1,43 @@
+def methode2(f,x):
+
+I=0
+for k in np.arange(0,len(x)-1):
+I+=(x[k+1]-x[k])*(f(x[k])+f(x[k+1]))/2
+return I
+
+# Code
+t=np.linspace(0,5,11)
+f=lambda t: 1/(1+(t-np.pi)**2)
+I1=methode1(f,t)
+I2=methode2(f,t)
+print(I1,I2)
+
+# Code
+x=sp.symbols('x')
+I=sp.integrate(1/(1+(x-np.pi)**2),(x,0,5)).evalf()
+#I=sp.integrate(1/(1+(x-sp.pi)**2),(x,0,5)).evalf()
+
+# Code
+E1=np.abs(I-I1)
+E2=np.abs(I-I2)
+print(E1,E2)
+
+# Code
+# Indications : vous pouvez utiliser cette démarche
+# 1- Créer pour chaque N une liste
+# contenant les points d'intégration
+# 2-Créer deux listes vides pour les remplir avec
+# les erreurs d'intégration demandées
+L1=np.linspace(0,5,31)
+L2=np.linspace(0,5,41)
+L3=np.linspace(0,5,51)
+L4=np.linspace(0,5,61)
+L=[L1,L2,L3,L4]
+ErrM1=[ ]
+ErrM2=[ ]
+#f=lambda t: 1/(1+(t-np.pi)**2)
+for k in L:
+ErrM1.append(np.abs(I-methode1(f,k)))
+ErrM2.append(np.abs(I-methode2(f,k)))
+print(ErrM1)
+print(ErrM2)
