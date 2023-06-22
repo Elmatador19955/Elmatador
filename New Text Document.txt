@@ -1,0 +1,48 @@
+xbar=np.sum(x)/len(x) #len(x)=len(y) ou autre..........
+ybar=np.sum(y)/len(y)
+prod=0
+x2=0
+for k in np.arange(0,len(x)):
+prod+=x[k]*y[k]
+x2+=x[k]**2
+xybar=prod/len(x)
+x2bar=x2/len(x)
+return xbar,ybar,xybar,x2bar 
+
+
+
+def coefficient(xbar,ybar,xybar,x2bar):
+b=(xybar-xbar*ybar)/(x2bar-xbar**2)
+a=ybar-b*xbar
+return a,b
+
+# Instructions Python
+x=np.arange(1,13)
+y=[4.3,5.1,5.7,6.3,6.8,7.1,7.2,7.2,7.2,7.2,7.5,7.8]
+
+# Instruction(s) Python
+# Méthode 1
+coefficient(somme(x,y)[0],somme(x,y)[1],somme(x,y)[2],somme(x,y)[3])
+# Méthode 2
+xbar=somme(x,y)[0]
+ybar=somme(x,y)[1]
+xybar=somme(x,y)[2]
+x2bar=somme(x,y)[3] # ou [-1]
+coefficient(xbar,ybar,xybar,x2bar)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
