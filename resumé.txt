@@ -16,3 +16,8 @@ Entity Manager (EM) est un gestionnaire d’entités• C’est le chef d’orch
 2 methode :
 1) La méthode persist()
 2) la methode flush()
+
+
+2 -a ) 
+[1] ORM \ OneToMany(mappedBy:’ films’ ,target Entity : Film :: Class)]
+[2] private collection $ categoryClass 
