@@ -18,6 +18,7 @@ print(result)
 les 6 premiers termes de la suite sont
 21, 10.976190476190476, 6.39915814481975, 4.762284630498826,
  4.480974806562001, 4.472144672443921, 4.472135955008076
+
 b)
 result = suite(a, N)
 
@@ -27,8 +28,10 @@ result.insert(0, delta)
 x_values = range(N+1)
 
 plt.plot(x_values, result, marker='o')
+
 c)
  en approche de la valeur exact de racine de a 
+
 d)
 a = 50
 N = 4
@@ -39,3 +42,24 @@ approximation = result[-1]  # Dernier terme de la suite
 
 print("Approximation de la racine carrée de 50:", approximation)
 7.0710678118654755
+
+***********************************************************************************
+partie 2 
+ 1)a
+import numpy as np
+
+def verification(Z):
+    unique_elements = np.unique(Z)
+    if len(Z) == len(unique_elements):
+        return True
+    else:
+        return False
+
+b)
+x = np.array([91, 271, 451, 530, 631,721,800])
+y = np.array([41, 89, 97, 89, 67,37,2])
+
+c)
+verif = verification(Z)
+print(verif)
+justification : les xi sont deux a deux distinct
