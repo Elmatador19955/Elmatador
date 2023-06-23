@@ -102,3 +102,12 @@ def Erreur(x, y, p):
     erreur_p = Erreur(x, y, p)
     print(f"L'erreur pour p={p} est {erreur_p}")
 
+L'erreur pour p=1 : 74.58
+L'erreur pour p=2 : 40.17
+L'erreur pour p=3 : 37.04
+L'erreur pour p=4 : 34.86
+L'erreur pour p=5 : 34.76
+L'erreur pour p=6 : 34.66
+
+
+b-Le polynôme de degré 4 ajuste au mieux les points de la trajectoire de la fusée.
