@@ -69,9 +69,11 @@ justification : les xi sont deux a deux distinct
 d)
     AP[0] = x[:p+1]
     AP[1] = y[:p+1]
+
 2)a)
 T[0] == t[1]
 np.linalg.det(A) != 0
+
 b)
 p =6 car la matrice doit etre carré
 
