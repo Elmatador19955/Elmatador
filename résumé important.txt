@@ -1,1 +1,44 @@
-test test
+Exercice 1 :
+1/ def suite(a, N):
+    x0 = a + 1
+    x = [x0]
+
+    for n in range(N):
+        xn = 1/2 * (x[n] + (a / x[n]))
+        x.append(xn)
+
+    return x
+
+2/ a/ 
+
+a = 20
+N = 5  
+x_terms = suite(a, N+1)
+print("Les 6 premiers termes de la suite (xn) sont :", x_terms)
+
+
+Les 6 premiers termes de la suite (xn) sont : [21.0, 11.547619047619047, 7.065268065268065, 5.257395887124136, 4.898988743869464, 4.884057970718042]
+
+b/
+import numpy as np
+import matplotlib.pyplot as plt
+
+a = 20
+N = 5 
+
+x_terms = suite(a, N+1) 
+
+n = np.arange(N+2)  
+
+delta = np.sqrt(a) 
+
+plt.plot(n, x_terms, marker='o', label='Termes de la suite') 
+plt.plot(n, np.full_like(n, delta), label='Droite') 
+plt.xlabel('n')
+plt.ylabel('Valeurs')
+plt.title('Représentation graphique des termes de la suite')
+plt.axis([0,8, 0, 25])
+plt.grid(True)
+plt.legend()
+
+plt.show()
