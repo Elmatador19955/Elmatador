@@ -77,3 +77,28 @@ np.linalg.det(A) != 0
 b)
 p =6 car la matrice doit etre carré
 
+partie 2
+1)
+a-
+def coefficients(x,y,p):
+  n=len(x)
+  A1=np.ones(n)
+  A2=np.zeros((n,p))
+  for i in range(n):
+    for j in range(p):
+      A2[i,j]=x[i]**j
+  A=np.concatenate((A1,A2),axis=1)
+  coefficients = np.linalg.lstsq(A, y, rcond=None)[0]
+  return coefficients, A
+
+b-
+def Erreur(x, y, p):
+    Lambda, A = coefficients(x, y, p)
+    erreur = np.linalg.norm(np.matmul(A, Lambda) - y, ord=2)
+    return erreur
+
+2-a-
+ for p in range(1, 7):
+    erreur_p = Erreur(x, y, p)
+    print(f"L'erreur pour p={p} est {erreur_p}")
+
