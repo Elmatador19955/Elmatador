@@ -111,3 +111,14 @@ L'erreur pour p=6 : 34.66
 
 
 b-Le polynôme de degré 4 ajuste au mieux les points de la trajectoire de la fusée.
+
+
+
+***********************************************
+Exercice 2
+Partie 1
+2) c/ 
+A = matrice(p)
+coefficients = np.linalg.solve(A, y)
+
+print("Les valeurs des coefficients λ0, λ1, ..., λp sont :", coefficients)
