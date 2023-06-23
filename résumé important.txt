@@ -1,44 +1,41 @@
-Exercice 1 :
-1/ def suite(a, N):
+1)
+def suite(a, N):
     x0 = a + 1
     x = [x0]
 
-    for n in range(N):
-        xn = 1/2 * (x[n] + (a / x[n]))
+    for _ in range(N):
+        xn = 0.5 * (x[-1] + a / x[-1])
         x.append(xn)
 
     return x
-
-2/ a/ 
-
+2)a)
 a = 20
-N = 5  
-x_terms = suite(a, N+1)
-print("Les 6 premiers termes de la suite (xn) sont :", x_terms)
+N = 6
 
+result = suite(a, N)
+print(result)
+//////
+les 6 premiers termes de la suite sont
+21, 10.976190476190476, 6.39915814481975, 4.762284630498826,
+ 4.480974806562001, 4.472144672443921, 4.472135955008076
+b)
+result = suite(a, N)
 
-Les 6 premiers termes de la suite (xn) sont : [21.0, 11.547619047619047, 7.065268065268065, 5.257395887124136, 4.898988743869464, 4.884057970718042]
+delta = np.sqrt(a)
+result.insert(0, delta)
 
-b/
-import numpy as np
-import matplotlib.pyplot as plt
+x_values = range(N+1)
 
-a = 20
-N = 5 
+plt.plot(x_values, result, marker='o')
+c)
+ en approche de la valeur exact de racine de a 
+d)
+a = 50
+N = 4
 
-x_terms = suite(a, N+1) 
+result = suite(a, N)
 
-n = np.arange(N+2)  
+approximation = result[-1]  # Dernier terme de la suite
 
-delta = np.sqrt(a) 
-
-plt.plot(n, x_terms, marker='o', label='Termes de la suite') 
-plt.plot(n, np.full_like(n, delta), label='Droite') 
-plt.xlabel('n')
-plt.ylabel('Valeurs')
-plt.title('Représentation graphique des termes de la suite')
-plt.axis([0,8, 0, 25])
-plt.grid(True)
-plt.legend()
-
-plt.show()
+print("Approximation de la racine carrée de 50:", approximation)
+7.0710678118654755
