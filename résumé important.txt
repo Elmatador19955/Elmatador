@@ -44,7 +44,9 @@ print("Approximation de la racine carrée de 50:", approximation)
 7.0710678118654755
 
 ***********************************************************************************
-partie 2 
+exercice 2 
+Partie 1:
+
  1)a
 import numpy as np
 
